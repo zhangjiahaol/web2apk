@@ -20,6 +20,15 @@ chmod +x ./gradlew
 ./gradlew assembleRelease
 ls -l app/build/outputs/apk/release/app-release.apk
 
+FAQ:
+# certificate 
+keytool -genkey -v -keystore webapp.keystore -alias webapp -keyalg RSA -keysize 2048 -validity 10000
+
+# signature APK
+jarsigner -verbose -keystore webapp.keystore -signedjar app-release-signed.apk app-release-unsigned.apk webapp
+
+# 优化APK，google要求没有用zipalign优化过不能上Google Play
+zipalign -v 4 app-release-signed.apk app-release.apk
 ```
 
 # website_to_Apk
