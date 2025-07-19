@@ -2,6 +2,17 @@ Demo apk : https://github.com/blackipie/web2apk/raw/main/app/release/app-release
 
 # build apk release
 ```
+Prepare:
+H5URL: web2apk\app\src\main\java\com\app\adtu\MainActivity.java
+appname: web2apk\app\src\main\res\values\strings.xml
+icon: web2apk\app\src\main\res\
+mipmap-hdpi
+mipmap-mdpi
+mipmap-xhdpi
+mipmap-xxhdpi
+mipmap-xxxhdpi
+
+Build:
 git clone https://github.com/zhangjiahaol/web2apk.git
 cd web2apk/
 docker run -it --rm -v $(pwd):/opt/src hamdifourati/cordova-android-builder:android-34 bash
@@ -9,15 +20,6 @@ chmod +x ./gradlew
 ./gradlew assembleRelease
 ls -l app/build/outputs/apk/release/app-release.apk
 
-FAQ:
-app name: web2apk\app\src\main\res\values\strings.xml
-URL Change: web2apk\app\src\main\java\com\app\adtu\MainActivity.java
-icon replace: web2apk\app\src\main\res\
-mipmap-hdpi
-mipmap-mdpi
-mipmap-xhdpi
-mipmap-xxhdpi
-mipmap-xxxhdpi
 ```
 
 # website_to_Apk
