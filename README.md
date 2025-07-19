@@ -8,16 +8,11 @@ docker run -it --rm -v $(pwd):/opt/src hamdifourati/cordova-android-builder:andr
 chmod +x ./gradlew
 ./gradlew assembleRelease
 ls -l app/build/outputs/apk/release/app-release.apk
-```
 
-# app name replace
-```
-vi web2apk\app\src\main\res\values\strings.xml
-```
-
-# icon replace
-```
-cd web2apk\app\src\main\res\
+FAQ:
+app name: web2apk\app\src\main\res\values\strings.xml
+URL Change: web2apk\app\src\main\java\com\app\adtu\MainActivity.java
+icon replace: web2apk\app\src\main\res\
 mipmap-hdpi
 mipmap-mdpi
 mipmap-xhdpi
