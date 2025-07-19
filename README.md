@@ -2,8 +2,10 @@ Demo apk : https://github.com/blackipie/web2apk/raw/main/app/release/app-release
 
 # build apk release
 ```
+git clone https://github.com/zhangjiahaol/web2apk.git
 cd web2apk/
 docker run -it --rm -v $(pwd):/opt/src hamdifourati/cordova-android-builder:android-34 bash
+chmod +x ./gradlew
 ./gradlew assembleRelease
 ls -l app/build/outputs/apk/release/app-release.apk
 ```
