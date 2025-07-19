@@ -18,6 +18,7 @@ cd web2apk/
 docker run -it --rm -v $(pwd):/opt/src hamdifourati/cordova-android-builder:android-34 bash
 chmod +x ./gradlew
 ./gradlew assembleRelease
+ls -l app/build/outputs/apk/release/app-release-unsigned.apk
 ls -l app/build/outputs/apk/release/app-release.apk
 
 FAQ:
