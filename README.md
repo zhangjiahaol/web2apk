@@ -10,6 +10,21 @@ chmod +x ./gradlew
 ls -l app/build/outputs/apk/release/app-release.apk
 ```
 
+# app name replace
+```
+vi web2apk\app\src\main\res\values\strings.xml
+```
+
+# icon replace
+```
+cd web2apk\app\src\main\res\
+mipmap-hdpi
+mipmap-mdpi
+mipmap-xhdpi
+mipmap-xxhdpi
+mipmap-xxxhdpi
+```
+
 # website_to_Apk
 Convert Your Website to Apk using Android Studio 
 
