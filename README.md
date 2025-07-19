@@ -1,10 +1,12 @@
 Demo apk : https://github.com/blackipie/web2apk/raw/main/app/release/app-release.apk
 
 # build apk release
+```
 cd web2apk/
 docker run -it --rm -v $(pwd):/opt/src hamdifourati/cordova-android-builder:android-34 bash
 ./gradlew assembleRelease
 ls -l app/build/outputs/apk/release/app-release.apk
+```
 
 # website_to_Apk
 Convert Your Website to Apk using Android Studio 
