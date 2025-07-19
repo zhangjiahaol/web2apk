@@ -62,15 +62,18 @@ public class MainActivity extends AppCompatActivity {
         mywebView.getSettings().setAllowContentAccess(true);
         mywebView.getSettings().setAllowFileAccess(true);
         mywebView.getSettings().setJavaScriptEnabled(true);
+        mywebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        mywebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        mywebView.getSettings().setAllowFileAccessFromFileURLs(true);
         mywebView.setWebChromeClient(new WebChromeClient());
-        mywebView.loadUrl("https://my.adtu.in/");
+        mywebView.loadUrl("http://168.76.70.82:8022/");
         WebSettings webSettings=mywebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         final SwipeRefreshLayout pullToRefresh = findViewById(R.id.pullToRefresh);
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mywebView.loadUrl("https://my.adtu.in/");
+                mywebView.loadUrl("http://168.76.70.82:8022/");
                 pullToRefresh.setRefreshing(false);
             }
         });
@@ -86,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 view.loadUrl(url);
                 return true;
+            }
+            
+            @Override
+            public void onReceivedSslError(WebView view, android.webkit.SslErrorHandler handler, android.net.http.SslError error) {
+                // 允许所有SSL错误，包括自签名证书
+                handler.proceed();
             }
         });
 
